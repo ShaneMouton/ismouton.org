@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: rgb(94, 57, 3);
+  padding: 0;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.75);
+  /* background-image: url(bg.jpg); */
+  /* min-width: 595px; */
+}
+
+body {
+  /* background-color:#f8f5ed; */
+  background-color:#f8f5ed;
+
+  padding: 32px;
+  padding-bottom: 0;
+  margin: 64px;
+  margin-top: 37px;
+  margin-bottom: 50vh;
+  line-height: 2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 3px;
+}
+
+canvas,
+img {
+  width: 500px;
+  height: auto;
+}
+
+img {
+  border-radius: 14px 14px 0 0;
+}
+
+section {
+  padding: 32px 0;
+  clear: both;
+  /* overflow: hidden; */
+}
+
+section + section { 
+  border-top: thin solid rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  font-family: sans-serif;
+  border-top: thin rgba(0, 0, 0, 0.5) solid;
+  border-bottom: thin rgba(0, 0, 0, 0.5) solid;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 500px;
+  padding: 4px;
+  margin-top: 4px;
+  padding-right: 96px;
+}
+
+nav > ul > li {
+  display: inline-block;
+}
+
+nav > ul > li > a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.imageReflectContainer {
+  display: inline-block;
+}
+
+section:nth-child(even) .imageReflectContainer {
+  float: left;
+  margin-right: 32px;
+}
+
+section:nth-child(odd) .imageReflectContainer {
+  float: right;
+  margin-left: 32px;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  border-top: rgba(0, 0, 0, 0.5) solid thin;
+  padding: 3px;
+}
+
+.pageTitle {
+  line-height: 1;
+  display: inline-block;
+  padding-bottom: 9px;
+}
+
+.pageTitle .tagline {
+  display: flex;
+  font-family: 'Bungee Hairline', sans-serif;
+  /* justify-content: space-between; */
+  flex-flow: row;
+  width: 100%;
+  margin-top: -9px;
+}
+
+.pageTitle .tagline > span {
+  margin-left: 5px;
+}
+
+.pageTitle .main {
+  font-family: 'Akronim', sans-serif;
+  font-size: 5em;
+}
+
+nav ul li a.active,
+nav ul li.active {
+  font-weight: bold;
+}
+
+nav ul li.active a::after,
+nav ul li.active a::before {
+  font-size: 2em;
+  position: absolute;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.title {
+  display: block;
+  text-align: center;
+  border: solid red thin;
+}
+
+h1 {
+  border-bottom: thin solid rgba(0, 0, 0, 0.75);
+  width: 50px;
+  display: inline-block;
+  /* clear: both; */
+}
+
+section > h1 {
+  margin-top: -12px;
+}
+
+ul.contactInfo {
+  float: right;
+  list-style: none;
+  display: inline-block;
+  width: 230px;
+  display: none;
+}
+
+ul.contactInfo .phone::before,
+ul.contactInfo .email::before {
+  position: absolute;
+  left: 0;
+}
+
+ul.contactInfo .phone::before {
+  content: 'Ph: ';
+}
+
+ul.contactInfo .email::before {
+  content: 'Email: ';
+}
+
+ul.contactInfo > li {
+  position: relative;
+  padding-left: 80px;
+}
+
+ul.contactInfo li + li {
+  border-top: dotted thin rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 700px)  {
+  body {
+     margin: 16px;
+  }
+}
+
+@media only screen and (max-width: 900px)  {
+  section:nth-child(even) div.imageReflectContainer,
+  section:nth-child(odd) div.imageReflectContainer {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 595px)  {
+  .imageReflectContainer img,
+  .imageReflectContainer {
+    width: 100% !important;
+    margin-bottom: 32px;
+  }
+  
+  body {
+    min-width: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  nav ul {
+    width: 400px;
+  }
+
+  canvas {
+    display: none;
+  }
+}
+
+@media print { 
+  body {
+    margin: 0;
+    padding: 0;
+    /* padding-top: 1.5in; */
+    background-color: white;
+    box-shadow: none;
+    color: black;
+  }
+
+  html {
+    background-color: transparent;
+  }
+
+  nav li:not(.active){
+    display: none;
+  }
+
+  nav ul {
+    border-top: none;
+  }
+
+  li.active a {
+    color: black;
+    font-size: 2em;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  ul.contactInfo {
+    display: inline-block;
+  }
+}
