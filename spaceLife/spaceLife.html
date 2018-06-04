@@ -1,0 +1,57 @@
+<script src="/spaceLife/gol.js"></script>
+<script src="/spaceLife/imagelib.js"></script>
+<div id="gamecontainer">
+	<script>
+		set_title("spaceLife");
+        	$('#css_supplementary').attr('href', "/spaceLife/spaceLife.css");
+
+	</script>
+            <div id="rcontainer">
+                <label for="file-input" class="dirinput hud" id="load" style="position:relative;top:22px;left:-75px;padding:4px 8px 3px 8px;box-shadow: 5px 5px 5px #000;">Load</label>
+                <div class="dirinput hud" id="reset" style="width:50px;" onclick='gol.map.randomize();update=1;'>Soup</div>
+                <div class="dirinput hud" id="clear" style="width:50px;" onclick='gol.map.clear();update=1;'>Clear</div>
+            </div>
+            <div class="dirinput hud" id="info" onclick="toggleInfo();">?</div>
+            <div id="dircontainter">
+                <div class="dirinput hud" id="b_up" onmousedown='key="up";pressed=1;' onmouseup='pressed=0;'>&#x25b2;</div>
+                <div class="dirinput hud" id="b_down" onmousedown='key="down";pressed=1;' onmouseup='pressed=0;'>&#x25BC;</div>
+                <div class="dirinput hud" id="b_left" onmousedown='key="left";pressed=1;' onmouseup='pressed=0;'>&#x25C0;</div>
+                <div class="dirinput hud" id="b_right" onmousedown='key="right";pressed=1;' onmouseup='pressed=0;'>&#x25B6;</div>
+            </div>
+                <div id="toolbar" class="hud">
+                    <div id="pausebutton" class="off" onmouseup="togglePause();">Pause</div>
+                    <div class="off" onmouseup="step = 1;">Step</div>
+                    <div class="label">S</div>
+                    <div id="s[0]" class="off" onclick='setRuleToggles(gol.toggle.S(0));'>0</div>
+                    <div id="s[1]" class="off" onclick='setRuleToggles(gol.toggle.S(1));'>1</div>
+                    <div id="s[2]" class="off" onclick='setRuleToggles(gol.toggle.S(2));'>2</div>
+                    <div id="s[3]" class="off" onclick='setRuleToggles(gol.toggle.S(3));'>3</div>
+                    <div id="s[4]" class="off" onclick='setRuleToggles(gol.toggle.S(4));'>4</div>
+                    <div id="s[5]" class="off" onclick='setRuleToggles(gol.toggle.S(5));'>5</div>
+                    <div id="s[6]" class="off" onclick='setRuleToggles(gol.toggle.S(6));'>6</div>
+                    <div id="s[7]" class="off" onclick='setRuleToggles(gol.toggle.S(7));'>7</div>
+                    <div id="s[8]" class="off" onclick='setRuleToggles(gol.toggle.S(8));'>8</div>
+                    <div class="label">B</div>
+                    <div id="b[0]" class="off" onclick='setRuleToggles(gol.toggle.B(0));' style="display:none;">0</div>
+                    <div id="b[1]" class="off" onclick='setRuleToggles(gol.toggle.B(1));'>1</div>
+                    <div id="b[2]" class="off" onclick='setRuleToggles(gol.toggle.B(2));'>2</div>
+                    <div id="b[3]" class="off" onclick='setRuleToggles(gol.toggle.B(3));'>3</div>
+                    <div id="b[4]" class="off" onclick='setRuleToggles(gol.toggle.B(4));'>4</div>
+                    <div id="b[5]" class="off" onclick='setRuleToggles(gol.toggle.B(5));'>5</div>
+                    <div id="b[6]" class="off" onclick='setRuleToggles(gol.toggle.B(6));'>6</div>
+                    <div id="b[7]" class="off" onclick='setRuleToggles(gol.toggle.B(7));'>7</div>
+                    <div id="b[8]" class="off" onclick='setRuleToggles(gol.toggle.B(8));'>8</div>
+                </div>
+                <div id="zoombar" class="hud">
+                    <div id="zoomin" class="zoombutton" onclick='zoomIn();'>+</div>
+                    <div id="zoomout" class="zoombutton" onclick='zoomOut();'>&ndash;</div>
+                </div>
+                <div class="dialog" id="about"><div style="text-align:center;">SpaceLife v0.9</div><p>Designed to be a fast implementation of Conway's Game of Life in Javascript and html canvas.</p><div class="dialog_button" onclick="toggleInfo();">OK</div></div>
+
+                <div class="dialog" id="error"><div style="text-align:center;">Error:</div><p id="error_body"></p><div class="dialog_button" onclick="toggleError();">OK</div>
+                </div>
+                <canvas id="game" width="640" height="640">
+            </div>
+
+<input id="file-input" type="file"/>
+<input type="file" id="file-input">

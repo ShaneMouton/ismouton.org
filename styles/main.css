@@ -9,14 +9,11 @@ html {
   padding: 0;
   margin: 0;
   color: rgba(0, 0, 0, 0.75);
-  /* background-image: url(bg.jpg); */
-  /* min-width: 595px; */
 }
 
 body {
-  /* background-color:#f8f5ed; */
   background-color:#f8f5ed;
-
+  /* background-color: rgba(255, 255, 255, 0.95); */
   padding: 32px;
   padding-bottom: 0;
   margin: 64px;
@@ -34,7 +31,7 @@ body {
   border-radius: 3px;
 }
 
-canvas,
+.imageReflectContainer canvas,
 img {
   width: 500px;
   height: auto;
@@ -47,7 +44,6 @@ img {
 section {
   padding: 32px 0;
   clear: both;
-  /* overflow: hidden; */
 }
 
 section + section { 
@@ -79,6 +75,7 @@ nav > ul > li > a {
 
 .imageReflectContainer {
   display: inline-block;
+  margin-bottom: 32px;
 }
 
 section:nth-child(even) .imageReflectContainer {
@@ -138,17 +135,17 @@ nav ul li.active a::before {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.title {
+/* .title {
   display: block;
   text-align: center;
   border: solid red thin;
-}
+} */
 
 h1 {
   border-bottom: thin solid rgba(0, 0, 0, 0.75);
   width: 50px;
   display: inline-block;
-  /* clear: both; */
+  white-space: nowrap;
 }
 
 section > h1 {
@@ -179,11 +176,58 @@ ul.contactInfo .email::before {
 
 ul.contactInfo > li {
   position: relative;
+}
+
+ul.contactInfo > li::after {
   padding-left: 80px;
+}
+
+ul.contactInfo > li.phone::after {
+  content: '(202) 656-3898';
+}
+
+ul.contactInfo > li.email::after {
+  content: 'www@ismouton.org';
 }
 
 ul.contactInfo li + li {
   border-top: dotted thin rgba(0, 0, 0, 0.75);
+}
+
+ul.projectLinks::before {
+  position: absolute;
+  content: "Project Links:";
+  left: 0;
+  top: -2em;
+  font-weight: bold;
+}
+
+a {
+  /* text-decoration: none; */
+}
+
+ul.projectLinks {
+  position: relative;
+  list-style: none;
+  /* border: thin solid rgba(0, 0, 0, 0.75); */
+  border-left: none;
+  border-right: none;
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  margin: 48px 0 0 0;
+}
+
+ul.projectLinks > li {
+  display: inline;
+}
+
+ul.projectLinks > li.demo a::after {
+  content: 'Demo';
+}
+
+ul.projectLinks > li.soureCode a::after {
+  content: 'Source Code';
 }
 
 @media only screen and (max-width: 700px)  {
@@ -205,7 +249,6 @@ ul.contactInfo li + li {
   .imageReflectContainer img,
   .imageReflectContainer {
     width: 100% !important;
-    margin-bottom: 32px;
   }
   
   body {
@@ -227,7 +270,6 @@ ul.contactInfo li + li {
   body {
     margin: 0;
     padding: 0;
-    /* padding-top: 1.5in; */
     background-color: white;
     box-shadow: none;
     color: black;
@@ -257,4 +299,54 @@ ul.contactInfo li + li {
   ul.contactInfo {
     display: inline-block;
   }
+}
+
+nav {
+  margin-bottom: 32px;
+}
+
+/* Cinema Styles */
+.cinemaContainer {
+  display: none;
+  background-color: darkgoldenrod;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  padding: 4px 4px 4px 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+
+.cinemaContainer .cinemaContent {
+  width: 100%;
+  height: inherit;
+  background-color: whiteSmoke;
+  min-height: 100px;
+  min-width: 100px;
+}
+
+.cinemaContainer .title {
+  padding: 5px;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255, 0.9);
+}
+
+.box3 { 
+  width: 25px; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.close-x {
+  stroke: rgba(255,255,255, 0.9);
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 5;
 }

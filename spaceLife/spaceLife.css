@@ -1,0 +1,311 @@
+input[type="file"]
+{
+    display: none;
+}
+
+/* .center_head
+{
+    vertical-align: center;
+    text-align: center;
+}
+
+
+#cinema_container
+{
+    border-radius: 2px;
+    width: 640px;
+    height: 640px;
+    position: absolute;
+    left: calc(50% - 320px);
+    top:  calc(50% - 335px);
+    border: none;
+	box-shadow: 5px 5px 20px black;
+    overflow:hidden;
+}
+
+#gamecontainer
+{
+    width: 640px;
+    height: 640px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+} */
+
+
+.label
+{
+    position: relative;
+    top: -5px;
+    text-align:center;
+    margin-left: 10px;
+    vertical-align: center;
+    float: left;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+#toolbar
+{
+    box-shadow: 0px 5px 5px #000000;
+    vertical-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 25px;
+    background-color: #CCCCCC;
+    float: left;
+    z-index: 50;
+    margin: 0px 0px 0px 0px;
+    cursor: default;
+    box-sizing: content-box;
+}
+
+#zoombar
+{
+    box-shadow: 5px 5px 5px #000000;
+    vertical-align: center;
+    text-decoration: bold;
+    position: absolute;
+    top: 575px;
+    left: 15px;
+    width: 25px;
+    height: 50px;
+    background-color: #CCCCCC;
+    float: left;
+    z-index: 50;
+    margin: 0px 0px 0px 0px;
+    border-radius: 2px;
+}
+
+
+.zoombutton
+{
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    text-align:center;
+    width: inherit;
+    height: 25px;
+    margin-left: 0px;
+    vertical-align: center;
+    float: left;
+    z-index: 3;
+    line-height: 1;
+}
+
+.on,
+.off
+{
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    text-align:center;
+    margin-left: 10px;
+    vertical-align: center;
+    border: 1px solid black;
+    float: left;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 3px;
+    z-index: 2;
+    box-sizing: content-box;
+    line-height: 1;
+}
+
+.on {
+
+    background-color: #000000;
+    color:#FFFFFF;
+}
+
+#gamecontainer
+{
+    width: 640px;
+    height: 640px;
+    position: relative;
+    top: 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    cursor: crosshair;
+
+}
+#game
+{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    float: left;
+    z-index: -1;
+}
+
+#dircontainter
+{
+    position: absolute;
+    top: 570px;
+    left: 530px;
+    line-height: 1.5;
+}
+
+#rcontainer
+{
+    position: absolute;
+    top: 17px;
+    left: 525px;
+}
+
+.dirinput
+{
+    cursor: pointer;
+    opacity:.90;
+    width:25px;
+    /* height:19px; */
+    text-align:center;
+    margin-left: 0px;
+    vertical-align:center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: #CCCCCC;
+    color:#000000;
+    border-radius: 2px;
+    line-height: 1;
+}
+#b_up
+{
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    z-index: 24;
+}
+#middle
+{
+    visibility: hidden;
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    z-index: 21;
+
+}
+#b_left
+{
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    top: 25px;
+    left: -15px;
+    z-index: 19;
+
+}
+#b_right
+{
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    top: 25px;
+    left: 65px;
+    z-index: 23;
+}
+#b_down
+{
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 20;
+}
+#reset
+{
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    left: -10px;
+    z-index: 25;
+}
+#clear
+{
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    left: 55px;
+    z-index: 26;
+}
+#info
+{
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #000000;
+    position: absolute;
+    left: 15px;
+    top: 35px;
+    z-index: 27;
+    visibility: hidden;
+}
+.dialog
+{
+    display: none;
+    float:left;
+    opacity: .90;
+    width: 330px;
+    height: 120px;
+    z-index: 28;
+    background-color: #CCC;
+    border-radius: 3;
+    box-shadow: 10px 10px 10px #000;
+    padding: 15px 15px 15px 15px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px double black;
+}
+
+.dialog_button
+{
+    cursor: pointer;
+    text-align: center;
+    width:30%;
+    border-radius: 5px;
+    border: 3px double black;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 15px;
+}
+
+            .hud{
+                opacity: .90;
+        -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein .5s; /* Firefox < 16 */
+        -ms-animation: fadein .5s; /* Internet Explorer */
+         -o-animation: fadein .5s; /* Opera < 12.1 */
+            animation: fadein .5s;
+            }
+
+            .hud_dis
+            {
+                opacity: 0;
+        -webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 2s; /* Firefox < 16 */
+        -ms-animation: fadeout 2s; /* Internet Explorer */
+         -o-animation: fadeout 2s; /* Opera */
+            }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .90; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .90; }
+}
+
+            @keyframes fadeout {
+    from { opacity: .90; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+    from { opacity: .90; }
+    to   { opacity: 0; }
+}

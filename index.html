@@ -6,13 +6,16 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <link href="//fonts.googleapis.com/css?family=Bungee Hairline|Akronim|Roboto&subset=latin" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" href="" id="css_supplementary">
+  <script src="js/jq.js"></script>
+  <script src="js/cinema.js"></script>
 </head>
 <body>
   <header>
     <ul class="contactInfo">
       <!-- <li class="name">Shane Mouton -->
-      <li class="phone">(202) 656-3898
-      <li class="email">www@ismouton.org
+      <li class="phone">
+      <li class="email">
       <!-- <li class="address"> -->
     </ul>
 
@@ -32,8 +35,25 @@
   </header>
   <main>
   </main>
+  <div class="modals">
+    <noscript>
+      <h3>
+        It has been detected that you have disabled JavaScript and therefore this site may not work.
+      </h3>
+    </noscript>
+    <div class="cinemaContainer">
+      <div class="title">Test</div>
+      <div class="box box3" onclick="cinema_hide()">
+        <svg viewbox="0 0 40 40">
+          <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+        </svg>
+      </div>
+      <div class="cinemaContent"></div>
+    </div>
+  </div>
+
   <footer>
-    2018 - Shane Mouton
+    2018 - Shane Mouton - <a href="https://github.com/ShaneMouton/ismouton.org/tree/master">Source Code</a>
   </footer>
   <script src="js/main.js"></script>
 </body>
