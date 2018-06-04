@@ -142,7 +142,7 @@ nav ul li.active a::before {
 } */
 
 h1 {
-  border-bottom: thin solid rgba(0, 0, 0, 0.75);
+  /* border-bottom: thin solid rgba(0, 0, 0, 0.75); */
   width: 50px;
   display: inline-block;
   white-space: nowrap;
@@ -314,10 +314,10 @@ nav {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding: 4px 4px 4px 4px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s;
+  top: 25%;
+  left: 25%;
+  /* transform: translate(-50%, -50%); */
+  /* transition: all 0.5s; */
 }
 
 .cinemaContainer .cinemaContent {
@@ -329,7 +329,7 @@ nav {
 }
 
 .cinemaContainer .title {
-  padding: 5px;
+  padding: 0px;
   left: 50%;
   width: 100%;
   text-align: center;
@@ -339,9 +339,10 @@ nav {
 .box3 { 
   width: 25px; 
   position: absolute;
-  top: 0;
+  top: -4px;
   right: 0;
   margin: 10px;
+  cursor: pointer;
 }
 
 .close-x {
@@ -350,3 +351,17 @@ nav {
   stroke-linecap: round;
   stroke-width: 5;
 }
+
+.bioPic {
+  border-radius: 100%;
+  width: 300px;
+  float: right;
+}
+
+.rcontainer {
+  padding: 0 16px;
+}
+/* 
+p {
+  padding-bottom: 64px;
+} */

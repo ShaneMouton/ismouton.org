@@ -44,9 +44,8 @@ input[type="file"]
     z-index: 2;
 }
 
-#toolbar
-{
-    box-shadow: 0px 5px 5px #000000;
+#toolbar {
+    /* box-shadow: 0px 5px 5px #000000; */
     vertical-align: center;
     position: absolute;
     top: 0;

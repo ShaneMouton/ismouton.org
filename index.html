@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link rel="stylesheet" href="" id="css_supplementary">
   <script src="js/jq.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="js/cinema.js"></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#bio">Bio</a>
+        <li><a href="#biography">About&nbsp;Me</a>
         <li><a href="#projects">Projects</a>
         <li><a href="#contact">Contact</a>
       </ul>
@@ -56,5 +57,10 @@
     2018 - Shane Mouton - <a href="https://github.com/ShaneMouton/ismouton.org/tree/master">Source Code</a>
   </footer>
   <script src="js/main.js"></script>
+  <script>
+    $(function () {
+      $(".cinemaContainer").draggable({ cancel: '.cinemaContent' });
+    });
+  </script>
 </body>
 </html>

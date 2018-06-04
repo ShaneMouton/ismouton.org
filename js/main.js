@@ -3,12 +3,13 @@
  */
 
 (()=>{
+  let lastValidHash = null;
+
   function routePage(urlString) {
     let hash = /.*#(.*)/.exec(urlString);
     if (hash) hash = hash[1];
 
-    /* No hash then lets allow default link behavior */
-    if (!hash) return;
+    if (!hash) hash = "biography";
 
     /* clear all active in navbar */
     let activeNavItems = document.querySelectorAll("nav ul li a.active");
@@ -29,6 +30,8 @@
 
       /* Set Active Links */
       let hashUrl = `#${hash}`;
+      lastValidHash = hash;
+
       let newActive = document.querySelector(`nav > ul > li > a[href="${hashUrl}"`);
       if (newActive) newActive.classList.add("active");
 
@@ -46,6 +49,16 @@
     let target = e.target;
     if (target.tagName === "A") {
       let href = target.href;
+
+      let hash = /.*(#.*)/.exec(href);
+      if (hash) hash = hash[1];
+
+      if (hash === "#") {
+        debugger;
+        e.preventDefault();
+        return;
+      }
+
       routePage(href);
     }
   });
